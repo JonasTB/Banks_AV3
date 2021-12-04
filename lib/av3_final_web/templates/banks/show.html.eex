@@ -1,0 +1,18 @@
+<h1>Show Banks</h1>
+
+<ul>
+
+  <li>
+    <strong>Revenue:</strong>
+    <%= @banks.revenue %>
+  </li>
+
+  <li>
+    <strong>Outlay:</strong>
+    <%= @banks.outlay %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.banks_path(@conn, :edit, @banks) %></span>
+<span><%= link "Back", to: Routes.banks_path(@conn, :index) %></span>

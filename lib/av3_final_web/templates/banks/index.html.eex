@@ -1,0 +1,28 @@
+<h1>Listing Banks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Revenue</th>
+      <th>Outlay</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for banks <- @banks do %>
+    <tr>
+      <td><%= banks.revenue %></td>
+      <td><%= banks.outlay %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.banks_path(@conn, :show, banks) %></span>
+        <span><%= link "Edit", to: Routes.banks_path(@conn, :edit, banks) %></span>
+        <span><%= link "Delete", to: Routes.banks_path(@conn, :delete, banks), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Banks", to: Routes.banks_path(@conn, :new) %></span>
